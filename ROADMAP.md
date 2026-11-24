@@ -54,6 +54,27 @@ Ship as betas first (beta.1: Screens, beta.2: Kids & family) on our board and Co
   person's photos and a "🎂 Today" Notes page.
 - **Chalk notes from a phone:** written or drawn on a phone, shown on the wall, wiped after a day.
 
+### Design, accessibility & sharpness (do the checks first; new 1.3.0 screens follow the results)
+- **How sharp is it really (the low-resolution worry):** the board is laid out at a fixed 1252 × 692 and enlarged
+  to fit (1.2.1), so a 1080p screen shows it at 1.5× and a 4K screen at 3×.
+  - Take screenshots at 1080p, 1440p, 4K and on the Apolosign, and list everything that looks soft.
+  - Likely soft spots to check: clipart, chalk drawings and emoji that are pictures rather than drawn shapes,
+    photo and polaroid sizes, the background textures, and drawings saved as pictures rather than as strokes.
+  - Fixes: shapes drawn as SVG where possible, a sharper copy of each picture for each screen size, and photos
+    fetched at the size the screen shows them.
+  - Consider letting big screens show more room (a bigger layout) instead of just enlarging the same one.
+- **Readable from across the room:** a minimum text size at wall viewing distance, and an optional
+  "Bigger writing" for each screen.
+- **Contrast:** check every chalk and event color against every background (whiteboard and kraft paper especially).
+  Add a check script; add a "clear chalk" high-contrast look.
+- **Not color alone:** each calendar gets a small mark or pattern as well as its color.
+- **Calmer motion:** follow the screen's "reduce motion" setting (confetti, GIFs, fades, the new arrow fade).
+- **Tablets, the console and phones:** buttons at least 44 px, labels for screen readers, keyboard focus that
+  shows, and an easy-to-read font option.
+- **Look even better:** a design review of the board, with more realistic chalk (slightly hand-drawn grid lines,
+  eraser smudges, dust at the edges), one icon style (chalk icons instead of mixed emoji in the controls), and
+  clearer spacing and sizes for titles, days and events.
+
 ### Alongside the release
 - **A demo that runs in the browser** with sample data and no server. It needs a home on Josh's site (still to
   decide: what the site is built on and its domain).
