@@ -78,6 +78,18 @@ Ship as betas first (beta.1: Screens, beta.2: Kids & family) on our board and Co
     Pictures are colored in once with short strokes and kept.
   - Lettering with an outline in a second color, or a white outline like a sticker, with marker streaks.
   - Ideas from her board: a dashed-line pen for flight paths, and doodle flowers and bees as pictures.
+  - Extras (all in the mockups):
+    - Pictures: a white highlight on colored-in pictures.
+    - Lettering: inline, drop shadow and neon chalk marker.
+    - Doodle pictures: flowers, bees, a heart, a star, a sun, a swirl, leaves.
+    - Decorations: a ribbon banner behind the month, a doodle frame around a trip that spans days, curly and
+      seasonal corners.
+    - Small touches: a hand-drawn circle around a day, a squiggle under an event, stars and sparkles, and how neat
+      the writing is (neat to loose).
+    - The board: its color (black, green, gray-blue, navy), gloss (none, soft, strong), and how used it looks
+      (clean, lightly used, well used).
+  - Erasing is drawn with a soft eraser along curved swipes, never with a canvas blur. Safari before 18 ignores
+    the blur, which left hard white blobs.
 - **Look even better:** a design review of the board, with more realistic chalk (slightly hand-drawn grid lines,
   eraser smudges, dust at the edges), one icon style (chalk icons instead of mixed emoji in the controls), and
   clearer spacing and sizes for titles, days and events.
