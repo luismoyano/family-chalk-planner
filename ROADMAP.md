@@ -71,6 +71,13 @@ Ship as betas first (beta.1: Screens, beta.2: Kids & family) on our board and Co
 - **Calmer motion:** follow the screen's "reduce motion" setting (confetti, GIFs, fades, the new arrow fade).
 - **Tablets, the console and phones:** buttons at least 44 px, labels for screen readers, keyboard focus that
   shows, and an easy-to-read font option.
+- **Board styles, from Tarin's real board** (mockups: https://claude.ai/artifact/ELWuftRLPTaEZ5muo7zQEJ):
+  - Chalk marker (her look), Stick chalk, or Clean (today's).
+  - Grid: Printed (thin cream lines, numbers in small boxes) or Hand-drawn.
+  - A look for each picture: As is · Chalk marker · Marker + white outline · Colored outline · Stick chalk.
+    Pictures are colored in once with short strokes and kept.
+  - Lettering with an outline in a second color, or a white outline like a sticker, with marker streaks.
+  - Ideas from her board: a dashed-line pen for flight paths, and doodle flowers and bees as pictures.
 - **Look even better:** a design review of the board, with more realistic chalk (slightly hand-drawn grid lines,
   eraser smudges, dust at the edges), one icon style (chalk icons instead of mixed emoji in the controls), and
   clearer spacing and sizes for titles, days and events.
