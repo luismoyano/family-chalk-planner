@@ -75,6 +75,29 @@ Ship as betas first (beta.1: Screens, beta.2: Kids & family) on our board and Co
   eraser smudges, dust at the edges), one icon style (chalk icons instead of mixed emoji in the controls), and
   clearer spacing and sizes for titles, days and events.
 
+### Fast and sharp on any screen ("it's just a website")
+- **The chalk look, done cheaply** (mockups: one grain for the whole board, clipart redrawn once): nothing is
+  recalculated while the board shows. The grain tile and each redrawn picture are made once at the screen's real
+  resolution and kept. Live SVG filters are not used.
+- **A speed budget, checked in CI:** a size limit for the wall's code, the time to first show the board on a
+  Raspberry Pi 4, and close to 0% processor use while nothing changes.
+- **Walls don't load the editor:** the build has no code splitting today, so a view-only wall downloads the
+  drawing tools and the picture library too. Split them out.
+- **A week-long soak test:** run a wall with a faked clock for days and check that memory and the page's size stay
+  flat. Screens stay up for weeks, and the stray-dots bugs showed that long uptime finds problems.
+- **Test in more browsers:** Playwright runs only Chromium. Add Firefox and WebKit (Safari), matching the build's
+  targets (`chrome100`, `safari15`, `firefox100`).
+- **Pause when nobody's looking:** in off hours, while hidden, or with the screen off, stop drawing, GIFs, weather
+  motion and checking for photos. Check every animation loop and timer (there are 17 to go through).
+- **Pictures sized for the screen:** photos and polaroids fetched at the size shown (WebP), cached for good on
+  the screen.
+- **A `?perf` overlay** like the other `?` test switches: frame rate, memory, and what's being drawn.
+- **Looking after the screen:**
+  - Burn-in protection: move everything by a pixel or two now and then.
+  - Reload the page if it stops getting updates, and a quiet nightly reload during off hours.
+- **Security:** the board page's security rules still allow inline scripts (`script-src 'unsafe-inline'`,
+  `access.ts:135`). See whether that can be removed as the other pages did.
+
 ### Alongside the release
 - **A demo that runs in the browser** with sample data and no server. It needs a home on Josh's site (still to
   decide: what the site is built on and its domain).
