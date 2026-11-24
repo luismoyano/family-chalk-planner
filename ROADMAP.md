@@ -1,0 +1,95 @@
+# Roadmap
+
+Plans for the next releases. Nothing here is built yet.
+
+## 1.3.0 — Screens, kids & family
+
+Ship as betas first (beta.1: Screens, beta.2: Kids & family) on our board and Colby's.
+
+### Screens
+- **Month arrows fade:** they show after a tap and fade after about 10 s when nobody's touching the screen (Tarin
+  confirmed). A setting for each screen: Always / Fade / Never.
+- **Tap the month name to pick a month:** a 12-month grid with a year switcher. This replaces the title tap's
+  reload while editing (move the reload into ☰).
+- **Swiping moves between pages:** Calendar → the screen's pinned pages, in the order they're pinned. It doesn't
+  wrap around at the end, and chalk dots fade in to show where you are.
+  - With nothing pinned it behaves as today (left = Chores).
+  - View-only walls get their own page list, set in the console → 📺 Screens.
+  - Swiping stays off in Draw / Decorate. The Notes switch, Split View and slideshow keep their own swipes (the
+    slideshow already changes photos). Pages that scroll sideways take a swipe only from their edges.
+  - Every page goes back to the calendar after a few quiet minutes, the time set for each screen.
+  - Optional, off by default: swipe up or down to change the month.
+- **Off hours (replaces the overnight slideshow):**
+  - On update, the current overnight window becomes window #1 with mode Slideshow, keeping its brightness and speed.
+  - Several windows, each on chosen days (for example weekdays 9–3).
+  - Each window has a mode: Slideshow · Night clock · Dimmed calendar · Black · Screen off.
+  - A board-wide default, overridden for each screen and editable in the console, the same way as the Notes column.
+  - A "🛏 Bedtime" preset for kids' tablets.
+  - While black or off, the board's work pauses (no updates, no GIFs, no photo checks).
+  - The existing double tap for the photo frame stays.
+- **Screen off, tried in this order:**
+  1. Fully Kiosk: `fully.turnScreenOff()` / `turnScreenOn()`.
+  2. FreeKiosk: its control API, if it has screen on/off (check), else through Home Assistant.
+  3. A Home Assistant action at the start and end of a window (FreeKiosk or Fully integration, a TV, a smart plug).
+  4. Chrome kiosk: stop asking to keep the screen awake, so the device's own screen sleep turns it off.
+     - Change `docs/kiosk.md` (lines 72 and 83): set the device's screen sleep to 1–2 minutes instead of never.
+     - Chrome only keeps a screen awake on HTTPS or `localhost`. Warn when it isn't possible.
+  5. Anything else: black.
+- **Night clock:** a big chalk clock, optionally with tomorrow's first event.
+- **"Good morning" card:** the first tap after off hours shows the weather, today's events and the first routine
+  for about 30 s, then the calendar.
+- **A console line for each screen:** how it turns its screen off, whether keeping it awake worked, and which off-hours
+  window it's in now.
+- Optional: wake on motion through Home Assistant or Fully Kiosk.
+
+### Kids & family
+- **Morning and bedtime routines on kids' tablets:** steps in order with times and picture icons.
+- **Picture chores for kids who can't read yet:** use the existing picture library.
+- **Finished routines and chores add marbles to jars automatically.** Streaks too ("5 mornings in a row ⭐").
+- **A kid's "My day" page:** just their events, extra large.
+- **"How many sleeps" countdown** in big, simple text.
+- **Countdowns between activities:** "10 minutes until we leave", as a shrinking chalk timer built on the existing
+  timers.
+- **Big-day mode:** for any starred event, and birthdays automatically. A border, a giant name, confetti, the
+  person's photos and a "🎂 Today" Notes page.
+- **Chalk notes from a phone:** written or drawn on a phone, shown on the wall, wiped after a day.
+
+### Alongside the release
+- **A demo that runs in the browser** with sample data and no server. It needs a home on Josh's site (still to
+  decide: what the site is built on and its domain).
+- **Docs on the site,** with a "Try it" button.
+- **Screenshots taken from the demo by a Playwright script,** re-run each release to refresh `docs/images`.
+- **For the repo:** a description, topics (self-hosted, family-calendar, wall-calendar, kiosk, home-assistant,
+  immich, skylight-alternative, dakboard-alternative) and a social preview image. No rename.
+
+### For every feature
+- Spanish words (`shared/i18n-es.ts`).
+- Test on older wall browsers (older than Chrome 105, as for 1.2.3), the Apolosign and Firefox.
+- Playwright tests: the swipe rules, and off-hours switching with a faked clock.
+- Works in the Home Assistant add-on.
+- User guide, changelog, screenshots.
+- Existing boards don't change after updating unless someone turns a feature on. The exception is the arrows
+  fading on family screens.
+
+## 1.4.0 — Photos (with Colby)
+
+- **Several photo sources:** Immich albums, Immich people, favorites and searches, plus iCloud and Google shared
+  albums. Only the albums the admin approves ever show.
+- **📷 Albums page:** in the page list, shown only when there are two or more albums. Album covers as polaroids;
+  tap one to play it and swipe to change photos.
+- **Different sources for the polaroids and the slideshow.**
+- **An off-hours Slideshow window can pick its album.**
+- **Albums for a season or month** (for example, a Christmas album in December).
+- **Big-day mode uses the person's Immich photos.**
+- **Later:** Immich Memories, and videos or Live Photos.
+- **When it's out:** post on r/selfhosted and r/homeassistant and in the Home Assistant forum, and ask to be listed in
+  awesome-selfhosted and on Immich's community projects page, with the demo link.
+
+## Later
+- Home Assistant alerts on the board (doorbell snapshot, garage, laundry) and who's home.
+- "Dinner tonight" shown big from the meal plan.
+- School lunch menu or bus times on each day.
+- A day, 3-day or agenda view for small screens.
+- Brightness that follows the time of day; sunrise, sunset and moon phase with the weather.
+- Sharing a month's decorations or a border set between families.
+- A "compared with Skylight / DAKboard" page.
